@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     static: './dist',
-   // publicPath: '/Kanban_board/',
+    // publicPath: '/Kanban_board/',
   },
   plugins: [
     new HtmlWebpackPlugin({
