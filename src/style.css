@@ -1,0 +1,25 @@
+
+body {
+  font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 40vw;
+}
+
+.logo {
+  font-size: 32px;
+}
+
+.bar {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  list-style: none;
+}
+
+.bar li a {
+  text-decoration: none;
+}
