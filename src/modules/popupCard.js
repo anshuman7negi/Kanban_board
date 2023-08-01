@@ -3,8 +3,8 @@ export default async (index,meals) => {
     const popup = document.querySelector('.popup');
     const meal =await  meals[index];
     popup.innerHTML = `<div class="commentCard">
+        <button class="close">X</button>
         <img src="${meal.strMealThumb}" alt="">
-        <h3 class="close">Close button</h3>
         <h3>${meal.strMeal}</h3>
         <h3>3 comments</h3>
         <form action="">

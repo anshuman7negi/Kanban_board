@@ -82,9 +82,22 @@ h3 {
     gap: 1rem;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 3rem 1rem;
   background-color: antiquewhite;;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  position: relative;
+}
+
+.commentCard .close {
+    background-color: red;
+    font-size: 1rem;
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 100px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
 }
 
 .commentCard img {
@@ -96,6 +109,7 @@ h3 {
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
+  width: 50%;
 }
 
 .commentCard form input {
