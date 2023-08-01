@@ -8,7 +8,7 @@ export default (meals) => {
          <li class="foodCard">
            <img class="mealimage" src="${meal.strMealThumb}" alt="${meal.strMeal}">
            <h2>${meal.strMeal}</h2>
-           <button type="button" class="comments">Comments</button>
+           <button type="button" class="comment">Comments</button>
          </li>
        `;
        listItems.push(listItem);
