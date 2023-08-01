@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 
 body {
   font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
@@ -6,7 +10,9 @@ body {
 .navigation {
   display: flex;
   flex-direction: row;
-  gap: 40vw;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: aquamarine;
 }
 
 .logo {
@@ -22,4 +28,15 @@ body {
 
 .bar li a {
   text-decoration: none;
+  font-size: 32px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  background-color: aquamarine;
+  font-weight: 700;
+  padding: 1rem;
 }
