@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: aquamarine;
+}
+
+.logo {
+  font-size: 32px;
+}
+
+.bar {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  list-style: none;
+}
+
+.bar li a {
+  text-decoration: none;
+  font-size: 32px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  background-color: aquamarine;
+  font-weight: 700;
+  padding: 1rem;
+}
