@@ -31,6 +31,34 @@ body {
   font-size: 32px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.mealimage {
+  height: 200px;
+}
+
+.comments {
+  width: 100px;
+  height: 26px;
+  border: 2px solid #000;
+  box-shadow: 4px 3px 2px #000;
+  justify-self: flex-end;
+  font-size: 18px;
+}
+
+.reservation {
+  width: 100px;
+  height: 26px;
+  border: 2px solid #000;
+  box-shadow: 4px 3px 2px #000;
+  justify-self: flex-end;
+  font-size: 18px;
+}
+
 footer {
   display: flex;
   align-items: center;
