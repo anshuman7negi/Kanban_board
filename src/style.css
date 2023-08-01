@@ -31,14 +31,27 @@ body {
   font-size: 32px;
 }
 
+.foodSection {
+  padding: 2rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.foodCard {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
+  background-color: antiquewhite;
 }
 
 .mealimage {
-  height: 200px;
+  height: 400px;
+  width: 100%;
 }
 
 .comments {
