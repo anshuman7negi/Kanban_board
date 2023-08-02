@@ -7,10 +7,10 @@ const fetchAndDisplayMeals = async () => {
       const meals = data.meals;
       return meals;
   } catch (error) {
+    /* eslint-disable no-console */
       console.error('Error fetching meals:', error);
       return []; // Return an empty array in case of an error
   }
 };
 
 export default fetchAndDisplayMeals;
- 
