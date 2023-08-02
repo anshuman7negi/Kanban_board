@@ -21,12 +21,13 @@ export default (meals) => {
   const container = document.querySelector('#mealListContainer');
   container.innerHTML = `<ul class="grid">${listItems.join('')}</ul>`;
 
+  /* eslint-disable no-console */
   // Attach event listeners to the heart icons
   const heartIcons = document.querySelectorAll('.heart');
   heartIcons.forEach((heart) => {
     heart.addEventListener('click', handleLike);
   });
-}
+};
 
 async function handleLike(event) {
   // Get the item_id from the meal name
@@ -48,6 +49,7 @@ async function handleLike(event) {
       body: JSON.stringify({ item_id }), // Convert the item_id to a JSON string
     });
 
+    /* eslint-disable no-plusplus */
     if (likeResponse.status === 201) {
       // Like was successfully created
       const container = event.target.parentElement;
