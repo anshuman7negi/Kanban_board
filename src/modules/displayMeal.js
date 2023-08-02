@@ -1,4 +1,5 @@
 import { handleLike, getLikes } from './LikeApi.js';
+import popupCard from './popupCard.js';
 
 export default async (meals) => {
   const listItems = [];
@@ -27,5 +28,19 @@ export default async (meals) => {
   const heartIcons = document.querySelectorAll('.heart');
   heartIcons.forEach((heart) => {
     heart.addEventListener('click', handleLike);
+  });
+
+  addCommentEventListeners(meals);
+};
+
+const addCommentEventListeners = (meals) => {
+  const commentButtons = document.querySelectorAll('.comment');
+  const likes = getLikes(); // You can fetch likes here if needed
+
+  commentButtons.forEach((comment, index) => {
+    comment.addEventListener('click', () => {
+      document.querySelector('main').style.display = 'none';
+      popupCard(index, meals);
+    });
   });
 };

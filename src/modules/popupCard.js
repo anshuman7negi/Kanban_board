@@ -1,17 +1,64 @@
+import { setComment, getComments,displayComments } from "./commentApi.js";
+
 export default async (index, meals) => {
   const popup = document.querySelector('.popup');
   const meal = await meals[index];
+
   popup.innerHTML = `<div class="commentCard">
         <button class="close">X</button>
         <img src="${meal.strMealThumb}" alt="">
         <h3>${meal.strMeal}</h3>
-        <h3>3 comments</h3>
-        <form action="">
+        <h3 id="totalComments"></h3>
+        <ul class="comment-box"></ul> 
+        <form id="commentForm" action="">
             <h3>Add a comment</h3>
-            <input type="text" placeholder="Your Name">
-            <textarea name="message" cols="30" rows="10" placeholder="Your insight" maxlength="500" required=""></textarea>
-            <button>comment</button>
+            <input type="text" id="usernameInput" placeholder="Your Name">
+            <textarea id="commentInput" name="message" cols="30" rows="10" placeholder="Your insight" maxlength="500" required=""></textarea>
+            <button id="submitCommentButton">comment</button>
         </form>
     </div>`;
   popup.style.display = 'flex';
+
+  const submitCommentButton = document.getElementById('submitCommentButton');
+  const commentBox = document.querySelector('.comment-box');
+  const totalCommentsElement = document.getElementById('totalComments');
+
+  const hideCommentBox = () => {
+    commentBox.style.display = 'none';
+  };
+
+  const updateCommentsDisplay = async (idMeal) => {
+    const comments = await getComments(idMeal);
+
+    if (comments !== null && !comments.error) {
+      displayComments(comments,commentBox);
+      totalCommentsElement.textContent = `Comments(${comments.length})`;
+    } else {
+      hideCommentBox();
+      totalCommentsElement.textContent = `Comments(0)`;
+    }
+  };
+
+  submitCommentButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    const usernameInput = document.getElementById('usernameInput');
+    const commentInput = document.getElementById('commentInput');
+
+    const username = usernameInput.value.trim();
+    const comment = commentInput.value.trim();
+
+    if (username === '' || comment === '') {
+      alert('Please enter both username and comment.');
+      return;
+    }
+
+    const meal = await meals[index];
+    await setComment(meal.idMeal, username, comment);
+    usernameInput.value = '';
+    commentInput.value = '';
+    updateCommentsDisplay(meal.idMeal);
+  });
+
+  updateCommentsDisplay(meal.idMeal);
 };
