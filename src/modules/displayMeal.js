@@ -1,6 +1,20 @@
 import { handleLike, getLikes } from './LikeApi.js';
 import popupCard from './popupCard.js';
 
+const addCommentEventListeners = (meals) => {
+  const commentButtons = document.querySelectorAll('.comment');
+  const mainElement = document.querySelector('main');
+  const children = mainElement.children;
+  commentButtons.forEach((comment, index) => {
+    comment.addEventListener('click', () => {
+      for (let i = 0; i < children.length; i++) {
+        children[i].classList.add('blurr');
+      }
+      popupCard(index, meals);
+    });
+  });
+};
+
 export default async (meals) => {
   const listItems = [];
   const likes = await getLikes();
@@ -31,16 +45,4 @@ export default async (meals) => {
   });
 
   addCommentEventListeners(meals);
-};
-
-const addCommentEventListeners = (meals) => {
-  const commentButtons = document.querySelectorAll('.comment');
-  const likes = getLikes(); // You can fetch likes here if needed
-
-  commentButtons.forEach((comment, index) => {
-    comment.addEventListener('click', () => {
-      document.querySelector('main').style.display = 'none';
-      popupCard(index, meals);
-    });
-  });
 };

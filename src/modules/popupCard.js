@@ -1,4 +1,4 @@
-import { setComment, getComments,displayComments } from "./commentApi.js";
+import { setComment, getComments, displayComments } from './commentApi.js';
 
 export default async (index, meals) => {
   const popup = document.querySelector('.popup');
@@ -31,11 +31,11 @@ export default async (index, meals) => {
     const comments = await getComments(idMeal);
 
     if (comments !== null && !comments.error) {
-      displayComments(comments,commentBox);
+      displayComments(comments, commentBox);
       totalCommentsElement.textContent = `Comments(${comments.length})`;
     } else {
       hideCommentBox();
-      totalCommentsElement.textContent = `Comments(0)`;
+      totalCommentsElement.textContent = 'Comments(0)';
     }
   };
 
@@ -49,7 +49,6 @@ export default async (index, meals) => {
     const comment = commentInput.value.trim();
 
     if (username === '' || comment === '') {
-      alert('Please enter both username and comment.');
       return;
     }
 

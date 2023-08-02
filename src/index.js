@@ -1,8 +1,6 @@
 import './style.css';
 import mealApi from './modules/mealApi.js';
 import displayMeal from './modules/displayMeal.js';
-import popupCard from './modules/popupCard.js';
-
 
 const displayData = async () => {
   const meals = await mealApi();
