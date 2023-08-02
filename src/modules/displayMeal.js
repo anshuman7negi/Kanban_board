@@ -4,7 +4,7 @@ export default (meals) => {
 
   // Loop through each meal and create a list item with an image for it
   meals.slice(0, 10).forEach((meal) => {
-      const listItem = `
+    const listItem = `
           <li class="foodCard">
               <img class="mealimage" src="${meal.strMealThumb}" alt="${meal.strMeal}">
               <h2>${meal.strMeal}</h2>
@@ -12,7 +12,7 @@ export default (meals) => {
               <button type="button" class="comment">Comments</button>
           </li>
       `;
-      listItems.push(listItem);
+    listItems.push(listItem);
   });
 
   // Display the list on the webpage
