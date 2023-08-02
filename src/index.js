@@ -4,13 +4,13 @@ import displayMeal from './modules/displayMeal.js';
 import popupCard from './modules/popupCard.js';
 
 const displayData = async () => {
-  const meals = await fetchAndDisplayMeals();
+  const meals = await mealApi();
   displayMeal(meals);
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
   await displayData();
-  const meals = await fetchAndDisplayMeals();
+  const meals = await mealApi();
   const comment = document.querySelectorAll('.comment');
   for (let i = 0; i < comment.length; i += 1) {
     comment[i].addEventListener('click', () => {
