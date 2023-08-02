@@ -1,68 +1,31 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable radix */
-export default (meals) => {
-  // Create an empty list to hold the HTML list items
-  const listItems = [];
+import { handleLike, getLikes } from './LikeApi.js';
 
-  // Loop through each meal and create a list item with image and heart icon for it
+export default async (meals) => {
+  const listItems = [];
+  const likes = await getLikes();
+
   meals.slice(0, 30).forEach((meal, index) => {
-    const itemId = `item${index + 1}`; // Generate item_id dynamically starting from "item1"
+    const itemId = `item${index + 1}`; // Changed 'item_id' to 'itemId'
+    const mealLikes = likes.find((like) => like.item_id === meal.strMeal);
+    const totalLikes = mealLikes ? mealLikes.likes : 0;
+
     const listItem = `
       <li class="foodCard">
         <img class="mealimage" src="${meal.strMealThumb}" alt="${meal.strMeal}">
         <h2>${meal.strMeal}</h2>
         <i class="fa-regular fa-heart heart" style="color: #dd0808;"></i>
         <button type="button" class="comment">Comments</button>
-        <span class="likes" id="${itemId}_likes">0 Likes</span>
+        <span class="likes" id="${itemId}_likes">${totalLikes} Likes</span> <!-- Changed 'item_id_likes' to 'itemIdLikes' -->
       </li>
     `;
     listItems.push(listItem);
   });
 
-  // Display the list on the webpage
   const container = document.querySelector('#mealListContainer');
   container.innerHTML = `<ul class="grid">${listItems.join('')}</ul>`;
 
-  /* eslint-disable no-console */
-  // Attach event listeners to the heart icons
   const heartIcons = document.querySelectorAll('.heart');
   heartIcons.forEach((heart) => {
     heart.addEventListener('click', handleLike);
   });
 };
-
-async function handleLike(event) {
-  // Get the item_id from the meal name
-  const itemId = event.target.parentElement.querySelector('h2').textContent;
-
-  try {
-    // Fetch the app_id from the API
-    const appResponse = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps', {
-      method: 'POST',
-    });
-    const appId = await appResponse.text(); // Receive the app_id as plain text
-
-    // Send a POST request to create a new like for the item
-    const likeResponse = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ itemId }), // Convert the item_id to a JSON string
-    });
-
-    /* eslint-disable no-plusplus */
-    if (likeResponse.status === 201) {
-      // Like was successfully created
-      const container = event.target.parentElement;
-      const likesElement = container.querySelector('.likes');
-      let currentLikes = parseInt(likesElement.textContent);
-      currentLikes++;
-      likesElement.textContent = `${currentLikes} Likes`;
-    } else {
-      console.error('Failed to create like:', likeResponse.status);
-    }
-  } catch (error) {
-    console.error('Error creating like:', error);
-  }
-}
