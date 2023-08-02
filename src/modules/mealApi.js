@@ -6,3 +6,4 @@ export default async () => {
   const { meals } = data;
   return meals;
 };
+
