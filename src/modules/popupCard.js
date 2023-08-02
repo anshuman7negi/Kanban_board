@@ -1,7 +1,7 @@
 
-export default async (index,meals) => {
+export default async (index, meals) => {
     const popup = document.querySelector('.popup');
-    const meal =await  meals[index];
+    const meal = await meals[index];
     popup.innerHTML = `<div class="commentCard">
         <button class="close">X</button>
         <img src="${meal.strMealThumb}" alt="">
@@ -15,4 +15,4 @@ export default async (index,meals) => {
         </form>
     </div>`;
     popup.style.display = "flex";
-}
+};
