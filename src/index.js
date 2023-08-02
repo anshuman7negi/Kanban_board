@@ -1,5 +1,5 @@
 import './style.css';
-import fetchAndDisplayMeals from './modules/mealApi.js';
+import mealApi from './modules/mealApi.js';
 import displayMeal from './modules/displayMeal.js';
 import popupCard from './modules/popupCard.js';
 
