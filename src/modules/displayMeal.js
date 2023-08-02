@@ -2,7 +2,7 @@ export default (meals) => {
   // Create an empty list to hold the HTML list items
   const listItems = [];
 
-  // Loop through each meal and create a list item with an image for it
+  // Loop through each meal and create a list item with image for it
   meals.slice(0, 10).forEach((meal) => {
     const listItem = `
           <li class="foodCard">
