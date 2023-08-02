@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-/* eslint-disable no-radix */
+/* eslint-disable radix */
 export default (meals) => {
   // Create an empty list to hold the HTML list items
   const listItems = [];
