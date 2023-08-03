@@ -4,12 +4,10 @@ import popupCard from './popupCard.js';
 const addCommentEventListeners = (meals) => {
   const commentButtons = document.querySelectorAll('.comment');
   const mainElement = document.querySelector('main');
-  const children = mainElement.children;
   commentButtons.forEach((comment, index) => {
     comment.addEventListener('click', () => {
-      for (let i = 0; i < children.length; i++) {
-        children[i].classList.add('blurr');
-      }
+      mainElement.classList.toggle('blurr');
+      document.body.style.paddingTop = '0';
       popupCard(index, meals);
     });
   });
@@ -29,8 +27,8 @@ export default async (meals) => {
         <img class="mealimage" src="${meal.strMealThumb}" alt="${meal.strMeal}">
         <h2>${meal.strMeal}</h2>
         <i class="fa-regular fa-heart heart" style="color: #dd0808;"></i>
+        <span class="likes" id="${itemId}_likes">${totalLikes} Likes</span>
         <button type="button" class="comment">Comments</button>
-        <span class="likes" id="${itemId}_likes">${totalLikes} Likes</span> <!-- Changed 'item_id_likes' to 'itemIdLikes' -->
       </li>
     `;
     listItems.push(listItem);

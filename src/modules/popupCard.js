@@ -8,6 +8,13 @@ export default async (index, meals) => {
         <button class="close">X</button>
         <img src="${meal.strMealThumb}" alt="">
         <h3>${meal.strMeal}</h3>
+        <div class="foodDetails">
+        <div class="mealArea">
+        <p>Area : ${meal.strArea}</p>
+        <p>Category : ${meal.strCategory}</p>
+        </div>
+        <p class="mealInstruction">${meal.strInstructions}</p>
+        </div>
         <h3 id="totalComments"></h3>
         <ul class="comment-box"></ul> 
         <form id="commentForm" action="">
@@ -54,6 +61,7 @@ export default async (index, meals) => {
 
     const meal = await meals[index];
     await setComment(meal.idMeal, username, comment);
+    commentBox.style.display = 'flex';
     usernameInput.value = '';
     commentInput.value = '';
     updateCommentsDisplay(meal.idMeal);

@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('close')) {
-    document.querySelector('main').style.display = 'block';
+    document.querySelector('main').classList.toggle('blurr');
+    document.body.style.paddingTop = '90px';
     document.querySelector('.popup').style.display = 'none';
   }
 });
