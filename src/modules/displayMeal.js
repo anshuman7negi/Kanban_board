@@ -1,5 +1,7 @@
 import { handleLike, getLikes } from './LikeApi.js';
 import popupCard from './popupCard.js';
+import { displayAmountMessage } from './itemsCounter.js'; // Import the displayAmountMessage function
+
 
 const addCommentEventListeners = (meals) => {
   const commentButtons = document.querySelectorAll('.comment');
@@ -17,7 +19,7 @@ export default async (meals) => {
   const listItems = [];
   const likes = await getLikes();
 
-  meals.slice(0, 30).forEach((meal, index) => {
+  meals.forEach((meal, index) => {
     const itemId = `item${index + 1}`; // Changed 'item_id' to 'itemId'
     const mealLikes = likes.find((like) => like.item_id === meal.strMeal);
     const totalLikes = mealLikes ? mealLikes.likes : 0;
@@ -43,4 +45,8 @@ export default async (meals) => {
   });
 
   addCommentEventListeners(meals);
+
+  // Get the count of items and display the amount message
+  const itemCount = meals.length;
+  displayAmountMessage(itemCount);
 };
