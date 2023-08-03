@@ -6,7 +6,6 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     static: './dist',
-    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
