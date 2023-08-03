@@ -229,6 +229,11 @@ button {
   justify-content: space-between;
 }
 
+.item-count {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
 @media screen and (max-width: 768px) {
   .navigation {
     padding: 0.5rem;
