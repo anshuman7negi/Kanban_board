@@ -23,14 +23,14 @@ main {
   background-color: #ace2d0;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .logo {
   font-size: 32px;
-  color: currentcolor;
+  color: currentColor;
 }
 
 .logo span {
@@ -45,7 +45,6 @@ main {
 }
 
 .bar li a {
-  text-decoration: none;
   text-decoration: none;
   font-size: 22px;
   color: black;
@@ -75,6 +74,10 @@ main {
   border-radius: 5px;
   align-items: center;
   flex: 1 1 calc(33.333% - 2.5rem);
+}
+
+.heart {
+  font-size: 26px;
 }
 
 .heart:hover {
@@ -183,7 +186,7 @@ h3 {
   padding: 0.4rem;
 }
 
-.comment-box  li:nth-child(even) {
+.comment-box li:nth-child(even) {
   background-color: #ea9494;
   color: #000;
 }
@@ -210,10 +213,6 @@ button {
   border-radius: 5px;
 }
 
-.heart {
-  font-size: 26px;
-}
-
 .blurr {
   filter: blur(6px);
 }
@@ -231,7 +230,6 @@ button {
 }
 
 @media screen and (max-width: 768px) {
-
   .navigation {
     padding: 0.5rem;
   }
@@ -247,7 +245,7 @@ button {
   .foodSection {
     display: block;
   }
-  
+
   .grid {
     display: flex;
     flex-direction: column;
@@ -256,6 +254,4 @@ button {
   footer {
     font-size: 16px;
   }
-
-
 }
