@@ -1,22 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+  padding-top: 90px;
+}
+
+main {
+  display: block;
+  position: relative;
 }
 
 .navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1rem;
-  background-color: aquamarine;
+  padding: 1rem 2.5rem;
+  background-color: #ace2d0;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .logo {
   font-size: 32px;
+  color: currentColor;
+}
+
+.logo span {
+  color: red;
 }
 
 .bar {
@@ -28,11 +46,16 @@ body {
 
 .bar li a {
   text-decoration: none;
-  font-size: 32px;
+  font-size: 22px;
+  color: black;
+  font-weight: 600;
 }
 
 .foodSection {
   padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .grid {
@@ -44,11 +67,23 @@ body {
 .foodCard {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
   padding: 1rem;
   background-color: antiquewhite;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  align-items: center;
+  flex: 1 1 calc(33.333% - 2.5rem);
+}
+
+.heart {
+  font-size: 26px;
+}
+
+.heart:hover {
+  background-color: red;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .mealimage {
@@ -70,10 +105,11 @@ h3 {
 }
 
 .popup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
 }
 
 .commentCard {
@@ -85,15 +121,16 @@ h3 {
   padding: 3rem 1rem;
   background-color: antiquewhite;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  width: 60%;
+  width: 100%;
   position: relative;
+  border-radius: 5px;
 }
 
 .commentCard .close {
   background-color: red;
   font-size: 1rem;
   position: absolute;
-  top: 14px;
+  top: 34px;
   right: 0;
   width: 100px;
   border-bottom-left-radius: 30px;
@@ -113,20 +150,52 @@ h3 {
 }
 
 .commentCard form input {
-  border: 3px solid #000;
-  padding: 0.3rem;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 10px;
 }
 
 .commentCard form textarea {
-  border: 3px solid #000;
-  padding: 0.3rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  height: 70px;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  font-size: 20px;
+  border: 2px solid #fff;
+  align-items: center;
+  max-height: 370px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  padding: 0.5rem;
+  gap: 0.4rem;
+}
+
+.comment-box li {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #d2c8c8;
+  padding: 0.4rem;
+}
+
+.comment-box li:nth-child(even) {
+  background-color: #ea9494;
+  color: #000;
 }
 
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 42px;
+  font-size: 22px;
   background-color: aquamarine;
   font-weight: 700;
   padding: 1rem;
@@ -144,6 +213,45 @@ button {
   border-radius: 5px;
 }
 
-.heart {
-  font-size: 26px;
+.blurr {
+  filter: blur(6px);
+}
+
+.foodDetails {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 2rem;
+}
+
+.mealArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 0.5rem;
+  }
+
+  .navigation h3 {
+    font-size: 28px;
+  }
+
+  .navigation ul {
+    display: none;
+  }
+
+  .foodSection {
+    display: block;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    font-size: 16px;
+  }
 }
