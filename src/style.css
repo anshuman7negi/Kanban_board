@@ -31,10 +31,12 @@ main {
 .logo {
   font-size: 32px;
   color: currentColor;
+  font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
 }
 
 .logo span {
   color: red;
+  font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
 }
 
 .bar {
@@ -91,6 +93,7 @@ main {
 .heart:active {
   font-size: 30px;
   color: red;
+  transform: scale(1.15);
 }
 
 .mealimage {
@@ -125,16 +128,16 @@ h3 {
 
 .commentCard {
   display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem;
-    background-color: antiquewhite;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
-    border-radius: 5px;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: antiquewhite;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  border-radius: 5px;
 }
 
 .commentCard .close {
@@ -146,7 +149,7 @@ h3 {
   width: 100px;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
-  padding-right: 25px
+  padding-right: 25px;
 }
 
 .commentCard img {
@@ -225,6 +228,14 @@ button {
   width: 150px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+button:active {
+  background-color: #008552;
 }
 
 .blurr {
