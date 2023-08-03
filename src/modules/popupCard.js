@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { setComment, getComments, displayComments } from './commentApi.js';
 import commentCounter from './commentCounter.js';
 
