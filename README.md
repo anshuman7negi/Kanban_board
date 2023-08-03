@@ -85,6 +85,10 @@ Example commands:
 ## 🌍 Online Version <a name="online-version"></a>
   
   [Live version](https://anshuman7negi.github.io/Kanban_board/dist/)
+
+## 🌍Video Presentation <a name="Video-Presentation"></a>
+  
+  [Video Presentation](https://www.loom.com/share/c07159866c5f4b279682939afeb165be)
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
