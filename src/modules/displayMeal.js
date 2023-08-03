@@ -27,7 +27,7 @@ export default async (meals) => {
       <li class="foodCard">
         <img class="mealimage" src="${meal.strMealThumb}" alt="${meal.strMeal}">
         <h2>${meal.strMeal}</h2>
-        <i class="fa-solid fa-heart heart" style="color: #d79a93;"></i>
+        <i class="fa-solid fa-heart heart" ></i>
         <span class="likes" id="${itemId}_likes">${totalLikes} Likes</span>
         <button type="button" class="comment">Comments</button>
       </li>
