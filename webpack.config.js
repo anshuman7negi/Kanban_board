@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     static: './dist',
-    // publicPath: '/Kanban_board/',
+    publicPath: '/Kanban_board/dist/',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -17,7 +17,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
+    publicPath: '/Kanban_board/dist/',
   },
   optimization: {
     runtimeChunk: 'single',
