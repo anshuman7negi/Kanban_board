@@ -84,7 +84,7 @@ Example commands:
 
 ## 🌍 Online Version <a name="online-version"></a>
   
-  https://bupilipili.github.io/MY-PORTFOLIO/
+  https://anshuman7negi.github.io/Kanban_board/dist/
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
