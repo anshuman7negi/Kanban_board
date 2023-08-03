@@ -1,7 +1,6 @@
 import { handleLike, getLikes } from './LikeApi.js';
 import popupCard from './popupCard.js';
-import { displayAmountMessage } from './itemsCounter.js'; // Import the displayAmountMessage function
-
+import displayAmountMessage from './itemsCounter.js';
 
 const addCommentEventListeners = (meals) => {
   const commentButtons = document.querySelectorAll('.comment');
