@@ -1,11 +1,10 @@
 import { setComment, getComments, displayComments } from './commentApi.js';
-import { countComments } from './commentCounter.js';
+import commentCounter from './commentCounter.js';
 
 export default async (index, meals) => {
   const popup = document.querySelector('.popup');
   const meal = await meals[index];
-  const totalComments = await countComments(meal.idMeal);
-  
+  const totalComments = await commentCounter(meal.idMeal);
 
   popup.innerHTML = `<div class="commentCard">
         <button class="close">X</button>
