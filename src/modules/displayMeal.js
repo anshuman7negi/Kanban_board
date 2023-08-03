@@ -1,6 +1,6 @@
 import { handleLike, getLikes } from './LikeApi.js';
 import popupCard from './popupCard.js';
-import displayAmountMessage from './itemsCounter.js';
+import itemsCounter from './itemsCounter.js';
 
 const addCommentEventListeners = (meals) => {
   const commentButtons = document.querySelectorAll('.comment');
@@ -27,7 +27,7 @@ export default async (meals) => {
       <li class="foodCard">
         <img class="mealimage" src="${meal.strMealThumb}" alt="${meal.strMeal}">
         <h2>${meal.strMeal}</h2>
-        <i class="fa-regular fa-heart heart" style="color: #dd0808;"></i>
+        <i class="fa-solid fa-heart heart" style="color: #d79a93;"></i>
         <span class="likes" id="${itemId}_likes">${totalLikes} Likes</span>
         <button type="button" class="comment">Comments</button>
       </li>
@@ -46,6 +46,6 @@ export default async (meals) => {
   addCommentEventListeners(meals);
 
   // Get the count of items and display the amount message
-  const itemCount = meals.length;
-  displayAmountMessage(itemCount);
+  const totalMeal = document.querySelector('.totalMeal');
+  totalMeal.innerHTML = `We have ${itemsCounter()} meals`;
 };
