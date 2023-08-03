@@ -65,6 +65,9 @@ export default async (index, meals) => {
     usernameInput.value = '';
     commentInput.value = '';
     updateCommentsDisplay(meal.idMeal);
+    const newCounter = totalComments + 1;
+    const totalCommentsElement = document.getElementById('totalComments');
+    totalCommentsElement.textContent = `Comments(${newCounter})`;
   });
 
   updateCommentsDisplay(meal.idMeal);

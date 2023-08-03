@@ -35,7 +35,7 @@ const displayComments = (comments, commentBox) => {
     const li = document.createElement('li');
 
     const formattedDate = new Date(comment.creation_date).toLocaleDateString();
-    li.textContent = `${formattedDate} ${comment.username} ${comment.comment}`;
+    li.textContent = `${formattedDate} : ${comment.username} :  ${comment.comment}`;
     commentBox.appendChild(li);
   });
 };

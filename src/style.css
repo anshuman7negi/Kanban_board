@@ -52,7 +52,7 @@ main {
 }
 
 .foodSection {
-  padding: 0.7rem 1.6rem;
+  padding: 0.7rem 1.6rem 1.6rem 1.6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,6 +88,11 @@ main {
   cursor: pointer;
 }
 
+.heart:active {
+  font-size: 30px;
+  color: red;
+}
+
 .mealimage {
   height: 350px;
   width: 100%;
@@ -115,6 +120,7 @@ h3 {
   transform: translateX(-50%);
   width: 60%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .commentCard {
@@ -133,13 +139,14 @@ h3 {
 
 .commentCard .close {
   background-color: red;
-  font-size: 1rem;
+  font-size: 1.4rem;
   position: absolute;
   top: 34px;
-  right: 0;
+  right: 5px;
   width: 100px;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
+  padding-right: 25px
 }
 
 .commentCard img {
@@ -175,10 +182,11 @@ h3 {
   border: 2px solid #fff;
   align-items: center;
   max-height: 370px;
-  overflow-y: scroll;
   border-radius: 10px;
   padding: 0.5rem;
   gap: 0.4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .comment-box li {
@@ -216,6 +224,7 @@ button {
   border: none;
   width: 150px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .blurr {
