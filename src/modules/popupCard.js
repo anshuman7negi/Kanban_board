@@ -1,8 +1,10 @@
 import { setComment, getComments, displayComments } from './commentApi.js';
+import commentCounter from './commentCounter.js';
 
 export default async (index, meals) => {
   const popup = document.querySelector('.popup');
   const meal = await meals[index];
+  const totalComments = await commentCounter(meal.idMeal);
 
   popup.innerHTML = `<div class="commentCard">
         <button class="close">X</button>
@@ -15,7 +17,7 @@ export default async (index, meals) => {
         </div>
         <p class="mealInstruction">${meal.strInstructions}</p>
         </div>
-        <h3 id="totalComments"></h3>
+        <h3 id="totalComments">Comments(${totalComments})</h3>
         <ul class="comment-box"></ul> 
         <form id="commentForm" action="">
             <h3>Add a comment</h3>
@@ -28,7 +30,6 @@ export default async (index, meals) => {
 
   const submitCommentButton = document.getElementById('submitCommentButton');
   const commentBox = document.querySelector('.comment-box');
-  const totalCommentsElement = document.getElementById('totalComments');
 
   const hideCommentBox = () => {
     commentBox.style.display = 'none';
@@ -39,10 +40,8 @@ export default async (index, meals) => {
 
     if (comments !== null && !comments.error) {
       displayComments(comments, commentBox);
-      totalCommentsElement.textContent = `Comments(${comments.length})`;
     } else {
       hideCommentBox();
-      totalCommentsElement.textContent = 'Comments(0)';
     }
   };
 
