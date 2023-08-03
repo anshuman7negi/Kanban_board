@@ -84,7 +84,7 @@ Example commands:
 
 ## 🌍 Online Version <a name="online-version"></a>
   
-  https://anshuman7negi.github.io/Kanban_board/dist/
+  [Live version](https://anshuman7negi.github.io/Kanban_board/dist/)
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,7 +115,7 @@ Example commands:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [https://github.com/anshuman7negi/Kanban_board/issues].
+Feel free to check the [isuue](https://github.com/anshuman7negi/Kanban_board/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
