@@ -86,6 +86,9 @@ Example commands:
   
   [Live version](https://anshuman7negi.github.io/Kanban_board/dist/)
 
+## 📹 Video Presentation <a name="Video-Presentation"></a>
+  
+  [Video Presentation](https://drive.google.com/file/d/1pYBPj9zkxM5IgwO3xaJnGUVq0sK6-s2q/view?usp=sharing)
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
