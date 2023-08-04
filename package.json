@@ -44,7 +44,6 @@
   },
   "dependencies": {
     "@hint/utils-dom": "^2.2.4",
-    "lodash": "^4.17.21",
-    "testEnvironment": "jsdom" 
+    "lodash": "^4.17.21"
   }
 }
