@@ -296,7 +296,8 @@ button:active {
   }
 
   .commentCard img {
-    height: 350px;
+    height: 90%;
+    width: 99%;
   }
 
   .commentCard .close {
