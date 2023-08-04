@@ -30,7 +30,7 @@ main {
 }
 
 .logo {
-  font-size: 32px;
+  font-size: 38px;
   color: currentColor;
   font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
 }
@@ -284,5 +284,37 @@ button:active {
 
   footer {
     font-size: 16px;
+  }
+
+  .popup {
+    width: 90%;
+  }
+
+  .commentCard {
+    width: 90%;
+    padding: 5rem 1rem;
+  }
+
+  .commentCard img {
+    height: 350px;
+  }
+
+  .commentCard .close {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    width: 20%;
+  }
+
+  .foodDetails {
+    width: 100%;
+  }
+
+  .commentCard form {
+    width: 90%;
+  }
+
+  .comment-box {
+    width: 100%;
   }
 }
